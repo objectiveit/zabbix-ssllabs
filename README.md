@@ -7,8 +7,9 @@ Script should be used together with Zabbix Temaplate available here: https://sha
 * Install ssllabs_checker.sh script to your zabbix scripts path
 * Add Cronjob
 # Usage
-Please check "Configuration" part of script to configure it according your environment
-To run script: `ssllabs_checker.sh example.com`
-
-For Crontab (once per hour):
+* Configure macros {$SSLLABS_WITHOUT_VALUE_TIME} for number of days since no data received, e.g.
+`{$SSLLABS_WITHOUT_VALUE_TIME}=1d`
+* Please check "Configuration" part of script to configure it according your environment
+* To run script: `ssllabs_checker.sh example.com`
+* For Crontab (once per hour):
 `0 * * * * /opt/zabbix_scripts/ssllabs_checker.sh www.ssllabs.com`
