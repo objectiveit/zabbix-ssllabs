@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.0</version>
-    <date>2019-01-24T17:44:38Z</date>
+    <version>4.2</version>
+    <date>2019-05-16T19:06:18Z</date>
     <groups>
         <group>
             <name>Templates/Upwork</name>
@@ -85,11 +85,12 @@
             </macros>
             <templates/>
             <screens/>
+            <tags/>
         </template>
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template SSLLabs:ssllabs.certificate.grade.str(A)}=1</expression>
+            <expression>{Template SSLLabs:ssllabs.certificate.grade.regexp(&quot;^A$&quot;)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Certificate grade is A</name>
@@ -105,7 +106,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SSLLabs:ssllabs.certificate.grade.str(A+)}=1</expression>
+            <expression>{Template SSLLabs:ssllabs.certificate.grade.regexp(&quot;^A+$&quot;)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Certificate grade is A+</name>
@@ -121,7 +122,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SSLLabs:ssllabs.certificate.grade.str(B)}=1</expression>
+            <expression>{Template SSLLabs:ssllabs.certificate.grade.regexp(&quot;^B$&quot;)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Certificate grade is B</name>
@@ -137,7 +138,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SSLLabs:ssllabs.certificate.grade.str(C)}=1</expression>
+            <expression>{Template SSLLabs:ssllabs.certificate.grade.regexp(&quot;^C$&quot;)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Certificate grade is C</name>
@@ -153,7 +154,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SSLLabs:ssllabs.certificate.grade.str(D)}=1</expression>
+            <expression>{Template SSLLabs:ssllabs.certificate.grade.regexp(&quot;^D$&quot;)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Certificate grade is D</name>
@@ -169,10 +170,26 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template SSLLabs:ssllabs.certificate.grade.str(F)}=1</expression>
+            <expression>{Template SSLLabs:ssllabs.certificate.grade.regexp(&quot;^F$&quot;)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Certificate grade is F</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template SSLLabs:ssllabs.certificate.grade.str(Certificatenotvalid)}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Certificate invalid</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
